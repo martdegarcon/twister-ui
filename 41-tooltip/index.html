@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tooltip — UI Twists</title>
+<meta name="description" content="One tooltip that travels between buttons and rewrites its text instead of popping new ones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>41</b> Tooltip</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Tooltip</h1>
+    <p class="sub">Sweep across the toolbar — one tooltip travels with you</p>
+  </div>
+  <div class="bar" id="bar"><button class="tb" data-t="Bold" aria-label="Bold">B</button><button class="tb" data-t="Italic" aria-label="Italic">I</button><button class="tb" data-t="Link" aria-label="Link">⌁</button><button class="tb" data-t="Comment" aria-label="Comment">✎</button><button class="tb" data-t="Share" aria-label="Share">⇪</button><button class="tb" data-t="More options" aria-label="More options">⋯</button><div class="tip" id="tip"><span class="tt" id="tt"></span></div></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scroll Area — UI Twists</title>
+<meta name="description" content="Scrollbar that unfolds into the name of the section you are in while you scroll.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>15</b> Scroll Area</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Guidelines</h1>
+    <p class="sub">Scroll — the thumb tells you where you are</p>
+  </div>
+  <div class="area" id="area">
+    <div class="vp" id="vp"><section data-t="Typography"><h3>Typography</h3><p>Onest carries every screen. Weight does the talking: Thin whispers, Black insists. Tracking tightens as sizes grow, so large type stays calm.</p><p>Onest carries every screen. Weight does the talking: Thin whispers, Black insists. Tracking tightens as sizes grow, so large type stays calm.</p></section><section data-t="Color"><h3>Color</h3><p>The background is a sky from night to morning. Surfaces are translucent ink, text is warm white, and red only appears when something went wrong.</p><p>The background is a sky from night to morning. Surfaces are translucent ink, text is warm white, and red only appears when something went wrong.</p></section><section data-t="Motion"><h3>Motion</h3><p>One curve for everything — a quick start and a long, soft landing. Positions take half a second, fades a third. Nothing bounces.</p><p>One curve for everything — a quick start and a long, soft landing. Positions take half a second, fades a third. Nothing bounces.</p></section><section data-t="Spacing"><h3>Spacing</h3><p>Sixteen for radius, ten between stacked fields, twenty-eight under a title. Small numbers, repeated, make a rhythm.</p><p>Sixteen for radius, ten between stacked fields, twenty-eight under a title. Small numbers, repeated, make a rhythm.</p></section><section data-t="Haptics"><h3>Haptics</h3><p>Android feels every moment. iPhone only feels taps on native switches, so those are where the important feedback lives.</p><p>Android feels every moment. iPhone only feels taps on native switches, so those are where the important feedback lives.</p></section><section data-t="Copy"><h3>Copy</h3><p>Labels say what happens, not what the button is. “Hold to delete Atlas” beats “Confirm”.</p><p>Labels say what happens, not what the button is. “Hold to delete Atlas” beats “Confirm”.</p></section></div>
+    <div class="rail" id="rail"><div class="thumb" id="thumb"><span class="tag" id="tag"></span></div></div>
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

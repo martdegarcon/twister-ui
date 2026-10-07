@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alert Dialog — UI Twists</title>
+<meta name="description" content="Destructive confirm by holding, not by a second click. The button names what it deletes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>05</b> Alert Dialog</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Projects</h1>
+    <p class="sub">Deleting asks you to hold, not to click twice</p>
+  </div>
+  <div class="proj" id="proj">
+    <span class="pt"><b>Atlas</b><span>24 files · edited today</span></span>
+    <button class="del" id="del" type="button">Delete</button>
+  </div>
+  <div class="links"><a id="restore">Restore project</a></div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<div class="alert" id="alert" role="alertdialog" aria-modal="true" aria-labelledby="aTitle" aria-describedby="aDesc">
+  <h2 id="aTitle">Delete “Atlas”?</h2>
+  <p id="aDesc">All 24 files go with it. This can’t be undone.</p>
+  <div class="hold-wrap" id="holdWrap">
+    <button class="hold" id="hold" type="button">
+      <span class="bar" id="bar"></span>
+      <span class="hl h1">Hold to delete Atlas</span>
+      <span class="hl h2">Keep holding…</span>
+      <span class="hl h3">Deleted</span>
+    </button>
+  </div>
+  <button class="btn ghost" id="cancel" type="button">Cancel</button>
+</div>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Table — UI Twists</title>
+<meta name="description" content="Data table where sorting physically moves rows to their new places.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>07</b> Data Table</a>
+
+<main class="card wide">
+  <div class="title-wrap">
+    <h1 class="title">Customers</h1>
+    <p class="sub">Click a column — rows travel, nothing jumps</p>
+  </div>
+  <div class="table" id="table">
+    <div class="head" id="head">
+      <button data-k="name">Name<i></i></button>
+      <button data-k="plan">Plan<i></i></button>
+      <button data-k="mrr" class="num">MRR<i></i></button>
+      <button data-k="seats" class="num">Seats<i></i></button>
+    </div>
+    <div class="body" id="body"></div>
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

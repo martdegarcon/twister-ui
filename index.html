@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI Twists — shadcn components, each with one twist</title>
+<meta name="description" content="shadcn/ui components rebuilt with one twist each: state shown through type and motion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<style>
+  /* fixed gradient that also works on iOS (which ignores background-attachment:fixed) */
+  body{display:block;padding:0;background:#0A0D16}
+  body::before{content:'';position:fixed;inset:0;z-index:-1;
+    background:linear-gradient(180deg,#0A0D16 0%,#151C2C 18%,#2C3853 38%,#5A6888 58%,#97A6BE 80%,#DCE4ED 100%)}
+  .wrap{max-width:1040px;margin:0 auto;padding:96px 24px 120px}
+
+  header{max-width:560px;margin-bottom:56px}
+  .eyebrow{font-size:14px;color:var(--text-80);letter-spacing:0}
+  h1{margin-top:10px;font-size:56px;line-height:1;font-weight:500;letter-spacing:-.04em}
+  .lede{margin-top:18px;font-size:18px;line-height:26px;color:var(--text-80);letter-spacing:-.36px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} h1{font-size:44px} .wrap{padding-top:72px} }
+
+  .item{position:relative;display:flex;flex-direction:column;border-radius:24px;background:rgba(12,16,25,.86);
+    color:inherit;text-decoration:none;overflow:hidden;
+    transition:transform var(--move) var(--ease), background var(--fade) var(--ease)}
+  a.item:hover{transform:translateY(-4px);background:rgba(12,16,25,.94)}
+  a.item:active{transform:scale(.99)}
+
+  .preview{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0A0D16}
+  .preview iframe{position:absolute;left:0;top:0;width:1024px;height:640px;border:0;transform-origin:0 0;pointer-events:none}
+  .preview .soon{position:absolute;inset:0;display:grid;place-items:center;
+    background:linear-gradient(180deg,#0A0D16 0%,#1C2438 55%,#3B4865 100%)}
+  .preview .num{font-size:120px;font-weight:200;letter-spacing:-.06em;color:rgba(244,244,244,.12)}
+
+  .meta{display:flex;flex-direction:column;gap:6px;padding:20px 22px 22px}
+  .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .name{font-size:20px;font-weight:500;letter-spacing:-.4px}
+  .name span{color:var(--text-50);font-weight:400;margin-right:8px}
+  .status{font-size:13px;letter-spacing:0;color:var(--text-50);white-space:nowrap}
+  .status.live{color:var(--text)}
+  .status.live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#7EE2A8;margin-right:7px;vertical-align:1px}
+  .step{font-size:14px;color:var(--text-50);letter-spacing:0}
+  .desc{font-size:15px;line-height:21px;color:var(--text-80);letter-spacing:-.2px}
+
+  footer{margin-top:56px;font-size:14px;color:var(--ink);letter-spacing:0}
+  footer b{font-weight:600}
+  footer{position:relative}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">shadcn/ui, reimagined · 52 components</p>
+    <h1>UI Twists</h1>
+    <p class="lede">Familiar components from shadcn/ui, each rebuilt around one idea. The state lives in type and motion, not in extra chrome.</p>
+  </header>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>Design &amp; code — <b>Marat Murzagaliev</b></footer>
+</div>
+
+<script>
+const ITEMS = [
+  { n:'01', slug:'01-slider', name:'Slider', step:'Value',
+    desc:'The number’s font weight is the value. Drag from Thin to Black.', live:true },
+  { n:'02', slug:'02-switch', name:'Switch', step:'On / off',
+    desc:'The knob stretches as it travels; the label gains weight and Off morphs into On.', live:true },
+  { n:'03', slug:'03-tabs', name:'Tabs', step:'Navigation',
+    desc:'The pill flows to the tab, content slides in from the side you moved to.', live:true },
+  { n:'04', slug:'04-dialog', name:'Dialog', step:'Overlay',
+    desc:'The dialog grows out of the button that opened it and folds back into it.', live:true },
+  { n:'05', slug:'05-alert-dialog', name:'Alert Dialog', step:'Destructive confirm',
+    desc:'Hold to delete instead of clicking twice. The button names what it deletes.', live:true },
+  { n:'06', slug:'06-combobox', name:'Combobox', step:'Search & pick',
+    desc:'Your typed letters turn bold inside every match; options re-sort smoothly.', live:true },
+  { n:'07', slug:'07-data-table', name:'Data Table', step:'Sorting',
+    desc:'Sorting moves rows physically to their new places. Nothing jumps.', live:true },
+  { n:'08', slug:'08-toggle', name:'Toggle', step:'Formatting',
+    desc:'B gets bold, I leans, U and S draw their lines, on the toggle first.', live:true },
+  { n:'09', slug:'09-resizable', name:'Resizable', step:'Panels',
+    desc:'Resize a panel and the text changes letter width instead of wrapping.', live:true },
+  { n:'10', slug:'10-skeleton', name:'Skeleton', step:'Loading',
+    desc:'Text writes itself over the bars, eating them letter by letter.', live:true },
+  { n:'11', slug:'11-questionnaire', name:'Questionnaire', step:'Onboarding',
+    desc:'A form that turns into a chat: your chosen option flies over and becomes your reply.', live:true },
+  { n:'12', slug:'12-carousel', name:'Carousel', step:'Browsing',
+    desc:'A deck of cards. The top card leaves and slides back in under the deck.', live:true },
+  { n:'13', slug:'13-empty', name:'Empty', step:'First run',
+    desc:'Outlines of future content. Create fills the first outline in, a new one appears.', live:true },
+  { n:'14', slug:'14-menubar', name:'Menubar', step:'Commands',
+    desc:'Hold ⌘, ⇧ or ⌥ and the menu filters itself: matching shortcuts get heavy.', live:true },
+  { n:'15', slug:'15-scroll-area', name:'Scroll Area', step:'Long content',
+    desc:'While you scroll, the thumb opens into the name of the section you’re in.', live:true },
+  { n:'16', slug:'16-collapsible', name:'Collapsible', step:'Grouping',
+    desc:'Rests as a stack of notifications and deals itself out like cards.', live:true },
+  { n:'17', slug:'17-table', name:'Table', step:'Numbers',
+    desc:'Point at an amount and the column re-weighs itself against it.', live:true },
+  { n:'18', slug:'18-accordion', name:'Accordion', step:'Disclosure',
+    desc:'The open answer gets the weight; closed questions turn thin and step back.', live:true },
+  { n:'19', slug:'19-badge', name:'Badge', step:'Counters',
+    desc:'Each digit rolls on its own drum; the badge grows a column when it needs one.', live:true },
+  { n:'20', slug:'20-breadcrumb', name:'Breadcrumb', step:'Wayfinding',
+    desc:'Squeezed, it tightens its tracking first, then folds the middle into “…”.', live:true },
+  { n:'21', slug:'21-calendar', name:'Calendar', step:'Dates',
+    desc:'Days roll in diagonally on month change; a picked range gains weight.', live:true },
+  { n:'22', slug:'22-chart', name:'Chart', step:'Data',
+    desc:'Each value label is as heavy as the value it shows.', live:true },
+  { n:'23', slug:'23-checkbox', name:'Checkbox', step:'Tasks',
+    desc:'The tick is drawn like a pen stroke; done tasks thin out and step back.', live:true },
+  { n:'24', slug:'24-command', name:'Command', step:'⌘K',
+    desc:'The highlight glides between results; results glide to their new rank.', live:true },
+  { n:'25', slug:'25-date-picker', name:'Date Picker', step:'Input',
+    desc:'Day, month and year are separate drums: scroll, drag or use the arrows.', live:true },
+  { n:'26', slug:'26-drawer', name:'Drawer', step:'Sheets',
+    desc:'The page shrinks and dims exactly as far as you pull the sheet.', live:true },
+  { n:'27', slug:'27-dropdown-menu', name:'Dropdown Menu', step:'Actions',
+    desc:'The highlight follows the pointer and lends weight to the item underneath.', live:true },
+  { n:'28', slug:'28-field', name:'Field', step:'Validation',
+    desc:'The hint isn’t replaced by the error — it rewrites itself word by word.', live:true },
+  { n:'29', slug:'29-hover-card', name:'Hover Card', step:'Previews',
+    desc:'The card grows out of the @mention, and the mention becomes its title.', live:true },
+  { n:'30', slug:'30-input-group', name:'Input Group', step:'Addons',
+    desc:'A pasted https:// slides into the prefix; the domain becomes a suffix chip.', live:true },
+  { n:'31', slug:'31-kbd', name:'Kbd', step:'Shortcuts',
+    desc:'Key caps physically press down when you press the real keys.', live:true },
+  { n:'32', slug:'32-marker', name:'Marker', step:'Annotation',
+    desc:'Select words and a highlighter draws over them, line by line.', live:true },
+  { n:'33', slug:'33-message', name:'Message', step:'AI chat',
+    desc:'Streamed words arrive thin and gain weight as the ink dries.', live:true },
+  { n:'34', slug:'34-navigation-menu', name:'Navigation Menu', step:'Site nav',
+    desc:'One panel travels between items, resizing, content enters from your side.', live:true },
+  { n:'35', slug:'35-pagination', name:'Pagination', step:'Paging',
+    desc:'Numbers slide to make room; the page counter rolls on a drum.', live:true },
+  { n:'36', slug:'36-popover', name:'Popover', step:'Details',
+    desc:'Grows out of the exact point you clicked and shrinks back into it.', live:true },
+  { n:'37', slug:'37-radio-group', name:'Radio Group', step:'Choice',
+    desc:'The selection dot flows like a drop from one option to the next.', live:true },
+  { n:'38', slug:'38-select', name:'Select', step:'Picking',
+    desc:'Opens around your current choice; the new one drops into the field.', live:true },
+  { n:'39', slug:'39-sidebar', name:'Sidebar', step:'Layout',
+    desc:'Collapse it and the labels squeeze their tracking into the icons.', live:true },
+  { n:'40', slug:'40-spinner', name:'Spinner', step:'Waiting',
+    desc:'No circle: a wave of weight runs through the word, then settles.', live:true },
+  { n:'41', slug:'41-tooltip', name:'Tooltip', step:'Hints',
+    desc:'One tooltip travels between buttons and rewrites its text.', live:true },
+  { n:'42', slug:'42-sheet', name:'Sheet', step:'Side panel',
+    desc:'Pushes the page aside instead of covering it; the grid reflows.', live:true },
+  { n:'43', slug:'43-avatar', name:'Avatar', step:'People',
+    desc:'The stack fans out like a hand of cards; +N rolls.', live:true },
+  { n:'44', slug:'44-attachment', name:'Attachment', step:'Files',
+    desc:'The file lands as a page and shrinks into a chip.', live:true },
+  { n:'45', slug:'45-bubble', name:'Bubble', step:'Chat',
+    desc:'Your typed text becomes the bubble; ticks draw Sent → Read.', live:true },
+  { n:'46', slug:'46-item', name:'Item', step:'Checklists',
+    desc:'Finished items travel down to Done; the counter rolls.', live:true },
+  { n:'47', slug:'47-alert', name:'Alert', step:'Status',
+    desc:'Severity is weight; closing folds the alert into a dot.', live:true },
+  { n:'48', slug:'48-card', name:'Card', step:'Content',
+    desc:'The top layer lifts to reveal details printed underneath.', live:true },
+  { n:'49', slug:'49-toggle-group', name:'Toggle Group', step:'Alignment',
+    desc:'Lines glide to the new alignment, one after another.', live:true },
+  { n:'50', slug:'50-button-group', name:'Button Group', step:'Segments',
+    desc:'A liquid selection stretches across, then lets go.', live:true },
+  { n:'51', slug:'51-message-scroller', name:'Message Scroller', step:'Threads',
+    desc:'New messages roll up a counter; landing makes them glow.', live:true },
+  { n:'52', slug:'52-aspect-ratio', name:'Aspect Ratio', step:'Media',
+    desc:'The frame re-crops around the subject; the ratio label rolls.', live:true },
+];
+
+const grid = document.getElementById('grid');
+ITEMS.forEach(it => {
+  const el = document.createElement(it.live ? 'a' : 'div');
+  el.className = 'item';
+  if (it.live) el.href = it.slug + '/';
+  el.innerHTML = `
+    <div class="preview">${it.live
+      ? `<iframe src="${it.slug}/" title="${it.name} preview" allow="clipboard-write" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>`
+      : `<div class="soon"><span class="num">${it.n}</span></div>`}</div>
+    <div class="meta">
+      <div class="row"><p class="name"><span>${it.n}</span>${it.name}</p>
+        <p class="status ${it.live ? 'live' : ''}">${it.live ? 'Live' : 'Soon'}</p></div>
+      <p class="step">${it.step}</p>
+      <p class="desc">${it.desc}</p>
+    </div>`;
+  grid.appendChild(el);
+});
+
+// scale the 1024×640 live previews to the card width
+const ro = new ResizeObserver(entries => entries.forEach(e => {
+  const f = e.target.querySelector('iframe');
+  if (f) f.style.transform = `scale(${e.contentRect.width / 1024})`;
+}));
+document.querySelectorAll('.preview').forEach(p => ro.observe(p));
+</script>
+</body>
+</html>

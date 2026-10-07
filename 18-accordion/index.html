@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accordion — UI Twists</title>
+<meta name="description" content="Accordion where the open section is heavier and the rest step back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>18</b> Accordion</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">FAQ</h1>
+    <p class="sub">The open answer gets the weight, the rest step back</p>
+  </div>
+  <div class="acc" id="acc"><div class="it"><button class="q" aria-expanded="false"><span>What is UI Twists?</span><i></i></button><div class="a"><div><p>A set of familiar components, each rebuilt around one idea, so state lives in type and motion instead of extra chrome.</p></div></div></div><div class="it"><button class="q" aria-expanded="false"><span>Can I use it in production?</span><i></i></button><div class="a"><div><p>It is plain HTML, CSS and JS with no dependencies. Copy a folder, keep the shared tokens, and it works.</p></div></div></div><div class="it"><button class="q" aria-expanded="false"><span>Why one easing curve?</span><i></i></button><div class="a"><div><p>One curve makes everything feel like the same material. Positions take half a second, fades a third.</p></div></div></div><div class="it"><button class="q" aria-expanded="false"><span>Does it work on phones?</span><i></i></button><div class="a"><div><p>Yes. Android also vibrates at key moments; iPhone ticks when you tap native switches.</p></div></div></div></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

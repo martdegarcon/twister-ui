@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carousel — UI Twists</title>
+<meta name="description" content="A carousel that is a deck of cards: the top card goes to the bottom of the deck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>12</b> Carousel</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">The system</h1>
+    <p class="sub">Swipe the top card — it goes under the deck</p>
+  </div>
+  <div class="deck" id="deck"><article class="slide" data-i="0" style="--a:#2C3853;--b:#97A6BE"><span class="k">01</span><div><h3>Typography</h3><p>Onest, 100–900</p></div></article><article class="slide" data-i="1" style="--a:#3B2C53;--b:#B097BE"><span class="k">02</span><div><h3>Motion</h3><p>One curve for everything</p></div></article><article class="slide" data-i="2" style="--a:#2C4A53;--b:#97BEB5"><span class="k">03</span><div><h3>Haptics</h3><p>Taps you can feel</p></div></article><article class="slide" data-i="3" style="--a:#53412C;--b:#BEA997"><span class="k">04</span><div><h3>Color</h3><p>Night to morning</p></div></article><article class="slide" data-i="4" style="--a:#2C3353;--b:#9AA0C4"><span class="k">05</span><div><h3>Space</h3><p>16, 10, 28</p></div></article></div>
+  <div class="ctl">
+    <button class="nav" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <span class="count"><span class="drum" id="drum"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></span>&nbsp;of 5</span>
+    <button class="nav" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

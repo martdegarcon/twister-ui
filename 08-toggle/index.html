@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — UI Twists</title>
+<meta name="description" content="Formatting toggles that wear their own style: B gets bold, I leans, U and S draw their lines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>08</b> Toggle</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Formatting</h1>
+    <p class="sub">Each toggle shows its effect on itself first</p>
+  </div>
+  <div class="bar" role="toolbar" aria-label="Text formatting">
+    <button class="tg" data-f="b" aria-pressed="false" aria-label="Bold"><span class="g gb">B</span></button>
+    <button class="tg" data-f="i" aria-pressed="false" aria-label="Italic"><span class="g gi">I</span></button>
+    <button class="tg" data-f="u" aria-pressed="false" aria-label="Underline"><span class="g gu">U</span></button>
+    <button class="tg" data-f="s" aria-pressed="false" aria-label="Strikethrough"><span class="g gs">S</span></button>
+  </div>
+  <div class="sample" id="sample"><span class="t">Quiet interfaces</span><span class="t">speak through type.</span></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

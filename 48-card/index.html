@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card — UI Twists</title>
+<meta name="description" content="Two-layer card: the top layer lifts to reveal the details printed underneath.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>48</b> Card</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Card</h1>
+    <p class="sub">Hover or tap — the top layer lifts, details are underneath</p>
+  </div>
+  <div class="tk" id="tk" tabindex="0">
+    <div class="under">
+      <div class="r"><span>Date</span><b>Fri, 24 Oct</b></div>
+      <div class="r"><span>Doors</span><b>19:00</b></div>
+      <div class="r"><span>Seat</span><b>Row F · 14</b></div>
+      <div class="r big"><span>Total</span><b>€48</b></div>
+    </div>
+    <div class="top">
+      <span class="k">Concert</span>
+      <h2>Quiet Interfaces Live</h2>
+      <p>Moscow · Main Hall</p>
+      <span class="hint">Lift for details ↑</span>
+    </div>
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

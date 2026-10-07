@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Group — UI Twists</title>
+<meta name="description" content="Radio group where the selection dot flows like a drop from one option to the next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>37</b> Radio Group</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Plan</h1>
+    <p class="sub">The dot travels like a drop between options</p>
+  </div>
+  <div class="rg" id="rg" role="radiogroup"><label class="o"><input type="radio" name="plan" value="0"><span class="ring"></span><span class="t"><b>Free</b><span>For trying things out</span></span><span class="p">$0</span></label><label class="o"><input type="radio" name="plan" value="1" checked><span class="ring"></span><span class="t"><b>Pro</b><span>For working alone</span></span><span class="p">$12</span></label><label class="o"><input type="radio" name="plan" value="2"><span class="ring"></span><span class="t"><b>Team</b><span>For studios and teams</span></span><span class="p">$29</span></label><span class="drop" id="drop"></span></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

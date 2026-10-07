@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skeleton — UI Twists</title>
+<meta name="description" content="Skeleton that turns into the real text letter by letter, eating its own bars.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>10</b> Skeleton</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Skeleton</h1>
+    <p class="sub">Text writes itself over the bars instead of a fade</p>
+  </div>
+  <article class="post" id="post">
+    <div class="top">
+      <span class="ava"><span class="ini">AK</span></span>
+      <div class="meta">
+        <div class="ln"><span class="tx">Anna Kovaleva</span><i class="sk"></i></div>
+        <div class="ln small"><span class="tx">Product designer · 2h</span><i class="sk"></i></div>
+      </div>
+    </div>
+    <div class="ln"><span class="tx">Shipped the new onboarding today.</span><i class="sk"></i></div>
+    <div class="ln"><span class="tx">Every state is now a single, calm</span><i class="sk"></i></div>
+    <div class="ln"><span class="tx">transition — no spinners anywhere.</span><i class="sk"></i></div>
+  </article>
+  <button class="btn" id="reload" type="button">Reload</button>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

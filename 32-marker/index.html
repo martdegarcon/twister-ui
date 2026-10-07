@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marker — UI Twists</title>
+<meta name="description" content="Select text and a highlighter draws over it left to right, line by line; click a mark to wipe it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>32</b> Marker</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Marker</h1>
+    <p class="sub">Select any words — a highlighter draws over them</p>
+  </div>
+  <article class="doc" id="doc">
+    <p>Good motion is invisible until it is missing. When every state change takes the same curve, the interface starts to feel like one material, and people stop noticing the transitions and start trusting them.</p>
+    <p>Pick one easing, give positions half a second and fades a third, and let type carry the rest.</p>
+  </article>
+  <div class="ctl"><button class="btn" id="demo" type="button">Highlight the key line</button><button class="btn ghost" id="clear" type="button">Clear</button></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

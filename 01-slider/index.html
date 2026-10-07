@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slider — UI Twists</title>
+<meta name="description" content="Slider whose value is the font weight of its own number.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>01</b> Slider</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Weight</h1>
+    <p class="sub">Drag — the number gets heavier with the value</p>
+  </div>
+
+  <div class="readout">
+    <span class="num" id="num">400</span>
+    <div class="swap-stack wname" id="wname">
+      <span data-k="Thin">Thin</span><span data-k="ExtraLight">ExtraLight</span><span data-k="Light">Light</span>
+      <span data-k="Regular" class="on">Regular</span><span data-k="Medium">Medium</span><span data-k="SemiBold">SemiBold</span>
+      <span data-k="Bold">Bold</span><span data-k="ExtraBold">ExtraBold</span><span data-k="Black">Black</span>
+    </div>
+  </div>
+
+  <div class="slider" id="slider">
+    <div class="fill" id="fill"></div>
+    <div class="ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="thumb" id="thumb"></div>
+    <input type="range" id="range" min="100" max="900" step="1" value="400" aria-label="Font weight">
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

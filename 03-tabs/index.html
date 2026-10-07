@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabs — UI Twists</title>
+<meta name="description" content="Tabs: the pill flows to the tab, content slides in from the side you moved to.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>03</b> Tabs</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Workspace</h1>
+    <p class="sub">Content enters from the direction you switched</p>
+  </div>
+  <div class="tabs" role="tablist" id="tabs"><span class="pill" id="pill"></span><button class="tab on" role="tab" data-i="0">Overview</button><button class="tab" role="tab" data-i="1">Activity</button><button class="tab" role="tab" data-i="2">Settings</button></div>
+  <div class="panels" id="panels"><div class="panel on" data-i="0"><div class="line">4 projects</div><div class="line">12 collaborators</div><div class="line">Last edit · 2 hours ago</div></div><div class="panel" data-i="1"><div class="line">Anna commented on “Hero”</div><div class="line">You renamed “Atlas”</div><div class="line">Egor joined the team</div></div><div class="panel" data-i="2"><div class="line">Workspace name</div><div class="line">Default permissions</div><div class="line">Danger zone</div></div></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

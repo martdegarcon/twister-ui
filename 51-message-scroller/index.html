@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Message Scroller — UI Twists</title>
+<meta name="description" content="When new messages arrive while you read history, a counter rolls up on the jump button; landing makes them glow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>51</b> Message Scroller</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Thread</h1>
+    <p class="sub">Scroll up, then get new messages — the jump button counts them</p>
+  </div>
+  <div class="wrap">
+    <div class="scr" id="scr"></div>
+    <button class="jump" id="jump"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span class="drum" id="drum"></span><span>new</span></button>
+  </div>
+  <button class="btn" id="recv" type="button">Receive 3 messages</button>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spinner — UI Twists</title>
+<meta name="description" content="Spinner made of type: a weight wave runs through the word, then settles when the work is done.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>40</b> Spinner</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Spinner</h1>
+    <p class="sub">No circle — a wave of weight runs through the word</p>
+  </div>
+  <div class="stage" id="stage"><div class="word" id="word"></div><svg class="ok" id="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  <div class="ctl"><button class="btn" data-w="Loading">Load</button><button class="btn" data-w="Syncing">Sync</button><button class="btn" data-w="Saving">Save</button></div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

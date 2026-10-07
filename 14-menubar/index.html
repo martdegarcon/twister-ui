@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menubar — UI Twists</title>
+<meta name="description" content="Menubar that answers to your modifier keys: hold ⌘ and only the ⌘ shortcuts stay lit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>14</b> Menubar</a>
+
+<main class="card wide">
+  <div class="title-wrap">
+    <h1 class="title">Menubar</h1>
+    <p class="sub">Open a menu and hold ⌘, ⇧ or ⌥ — the menu filters itself</p>
+  </div>
+  <div class="app">
+    <nav class="mb" id="mb" role="menubar"></nav>
+    <div class="dd" id="dd" role="menu"><div class="dd-in" id="ddIn"></div></div>
+  </div>
+  <div class="mods" id="mods" aria-label="Modifier keys (tap on touch devices)">
+    <button data-m="cmd">⌘</button><button data-m="shift">⇧</button><button data-m="alt">⌥</button><button data-m="ctrl">⌃</button>
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

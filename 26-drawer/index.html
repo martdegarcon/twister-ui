@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drawer — UI Twists</title>
+<meta name="description" content="Bottom drawer that pushes the page back: the page shrinks and dims exactly as far as you pull.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>26</b> Drawer</a>
+
+<div class="page" id="page">
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Atlas</h1>
+    <p class="sub">Open the sheet, then drag it — the page follows your finger</p>
+  </div>
+  <div class="hero"></div>
+  <button class="btn" id="open" type="button">Share</button>
+</main>
+</div>
+<div class="scrim" id="scrim"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Share">
+  <div class="grab" id="grab"><i></i></div>
+  <h2>Share “Atlas”</h2>
+  <div class="opts">
+    <button><span class="ic">⧉</span>Copy link</button><button><span class="ic">✉</span>Email</button>
+    <button><span class="ic">◎</span>Invite</button><button><span class="ic">⇩</span>Export</button>
+  </div>
+  <button class="btn light" id="done" type="button">Done</button>
+</section>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dropdown Menu — UI Twists</title>
+<meta name="description" content="Dropdown whose highlight glides after the pointer and gives weight to the item underneath.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>27</b> Dropdown Menu</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Dropdown</h1>
+    <p class="sub">The highlight follows you and lends its weight</p>
+  </div>
+  <div class="wrap">
+    <button class="btn" id="trig" type="button" aria-haspopup="menu" aria-expanded="false">Options <i class="chev"></i></button>
+    <div class="menu" id="menu" role="menu">
+      <span class="hl" id="hl"></span>
+      <div class="mi" role="menuitem">Rename<kbd>F2</kbd></div>
+      <div class="mi" role="menuitem">Duplicate<kbd>⌘D</kbd></div>
+      <div class="mi" role="menuitem">Move to…</div>
+      <div class="sep"></div>
+      <div class="mi" role="menuitem">Share<kbd>⇧⌘S</kbd></div>
+      <div class="mi" role="menuitem">Archive</div>
+      <div class="sep"></div>
+      <div class="mi danger" role="menuitem">Delete<kbd>⌫</kbd></div>
+    </div>
+  </div>
+  <p class="picked" id="picked"></p>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

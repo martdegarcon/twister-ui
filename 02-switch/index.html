@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switch — UI Twists</title>
+<meta name="description" content="Switch where the state word morphs and the label gains weight.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>UI Twists · <b>02</b> Switch</a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Permissions</h1>
+    <p class="sub">The knob stretches as it travels, the word follows</p>
+  </div>
+  <div class="list">
+    <label class="row" data-i="0">
+      <span class="txt"><span class="name">Notifications</span>
+        <span class="state"><span class="w off on">Off</span><span class="w on-w">On</span></span></span>
+      <span class="sw"><span class="knob"></span></span>
+      <input type="checkbox" switch class="native" aria-label="Notifications">
+    </label>
+    <label class="row" data-i="1">
+      <span class="txt"><span class="name">Sounds</span>
+        <span class="state"><span class="w off on">Off</span><span class="w on-w">On</span></span></span>
+      <span class="sw"><span class="knob"></span></span>
+      <input type="checkbox" switch class="native" aria-label="Sounds">
+    </label>
+    <label class="row" data-i="2">
+      <span class="txt"><span class="name">Location</span>
+        <span class="state"><span class="w off on">Off</span><span class="w on-w">On</span></span></span>
+      <span class="sw"><span class="knob"></span></span>
+      <input type="checkbox" switch class="native" aria-label="Location">
+    </label>
+  </div>
+</main>
+
+<script src="../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
